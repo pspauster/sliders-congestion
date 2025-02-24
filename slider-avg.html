@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.event.move/2.0.1/jquery.event.move.js"
+        integrity="sha512-JEIAiFT4gyVSJ/InaLiuARszxD1Ye5SZyQFcKfOsnBYpZzRribsQR2NrCXw76NoPF4W2eIIChta5SFgwWQ5FBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mhayes-twentytwenty/1.0.0/js/jquery.twentytwenty.min.js"
+        integrity="sha512-GPLeok4pmABjbz8dF6i4cqao9fhF9LE5X4rI0ORBe2YqbZmaqdSiM7g4oO+CEy99SxZV6memnoKANwopFr6Z6g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/mhayes-twentytwenty/1.0.0/css/foundation.min.css"
+        integrity="sha512-FiuJrymBAjwc33PPG6AqRpCw+lIoBy+3hdFRE7uSSYaLH4ZxTQ1r+YSaLf9HB6abBl3o6mfk4iqRhnyaT0zlLw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/mhayes-twentytwenty/1.0.0/css/twentytwenty.min.css"
+        integrity="sha512-NJy06C7fPArp8I0XLO5pDDTDguBMLCPQ2FyjU3xrwuD5CGyN6CbfTr40Zv+YON7lDNzAsRqZeEY8Oi0xrgP+3w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cutive&display=swap" rel="stylesheet">
+    <style>
+        h1 {
+            font-family: "Cutive", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        h2 {
+            font-family: "Cutive", sans-serif;
+            font-weight: 200;
+            font-style: italic;
+            font-size: small;
+            color: grey
+        }
+
+        .twentytwenty-container {
+            justify-content: center;
+            display: flex;
+            /* Center horizontally */
+        }
+
+        #container1 {
+            max-height: 600px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        #container1 img {
+            height: auto;
+            display: block;
+            width: 100%;
+            /* object-fit: cover */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="widget">
+        <h1>Traffic Is Down in The Congestion Zone</h1>
+        <div id="container1" class="twentytwenty-container">
+            <img src="https://patrickspauster.com/images/congestion-maps-cropped-01.png">
+            <img src="https://patrickspauster.com/images/congestion-maps-cropped-02.png">
+        </div>
+        <h2>Average additional trip time, January 3-February 20th 2024 to January 1st-February 18th 2025. Data and maps
+            courtesy of TomTom</h2>
+    </div>
+    <script>
+        $(function () {
+            $(".twentytwenty-container").twentytwenty({
+                default_offset_pct: 0.5, // How much of the before image is visible when the page loads
+                orientation: 'horizontal', // Orientation of the before and after images ('horizontal' or 'vertical')
+                before_label: 'Jan-Feb 2024', // Set a custom before label
+                after_label: 'Jan-Feb 2025 ', // Set a custom after label
+                no_overlay: true, //Do not show the overlay with before and after
+                move_slider_on_hover: true, // Move slider on mouse hover?
+                move_with_handle_only: true, // Allow a user to swipe anywhere on the image to control slider movement. 
+                click_to_move: false // Allow a user to click (or tap) anywhere on the image to move the slider to that location.
+            });
+        });
+    </script>
+</body>
+
+</html>
